@@ -14,7 +14,7 @@
                 "value": "#FFFFFF"
             },
             "svart": {
-                "value": "#000000"
+                "value": "#181818"
             },
             "skifer": {
                 "value": "#313030"
@@ -33,32 +33,129 @@
             },
             "sand": {
                 "value": "#F4F2EF"
+            },
+
+            "main": {
+                "svart": {
+                    "value": "#181818"
+                },
+                "hvit": {
+                    "value": "#FFFFFF"
+                },
+                "svart-70": {
+                    "value": "#181818B2"
+                }
+            },
+            "purple": {
+                "1100d": {
+                    "value": "#0D0A10"
+                },
+                "1050d": {
+                    "value": "#18121C"
+                },
+                "1000d": {
+                    "value": "#241B28"
+                },
+                "950": {
+                    "value": "#450962"
+                },
+                "950d": {
+                    "value": "#33233C"
+                },
+                "900": {
+                    "value": "#641E85"
+                },
+                "900d": {
+                    "value": "#532C66"
+                },
+                "800": {
+                    "value": "#7A23A6"
+                },
+                "800d": {
+                    "value": "#6D3488"
+                },
+                "700": {
+                    "value": "#9125CB"
+                },
+                "700d": {
+                    "value": "#8740AF"
+                },
+                "600": {
+                    "value": "#A836E7"
+                },
+                "500": {
+                    "value": "#BA58F4"
+                },
+                "450": {
+                    "value": "#C46FF7"
+                },
+                "400": {
+                    "value": "#CE87FA"
+                },
+                "350": {
+                    "value": "#D79EFB"
+                },
+                "300": {
+                    "value": "#E0B5FD"
+                },
+                "200": {
+                    "value": "#EED7FE"
+                },
+                "100": {
+                    "value": "#F6E8FF"
+                },
+                "50": {
+                    "value": "#FBF5FF"
+                }
+            },
+            "extras": {
+                "border-grey": {
+                    "value": "#634E70"
+                },
+                "offwhite": {
+                    "value": "#FEFAF9"
+                },
+                "offwhite-70": {
+                    "value": "#FEFAF9B2"
+                },
+                "disabled-row-light": {
+                    "value": "#F6F2F8"
+                },
+                "disabled-row-dark": {
+                    "value": "#5E4A67"
+                },
+                "disabled-text-light": {
+                    "value": "#A296B3"
+                },
+                "disabled-text-dark": {
+                    "value": "#8C75A5"
+                }
             }
         },
         "functional": {
             "info": {
-                "value": "#D3D3F6"
+                "value": "#F6E8FF"
             },
             "info-dark": {
-                "value": "#A9A9CA"
+                "value": "#F6E8FF"
             },
             "success": {
-                "value": "#ACD3B5"
+                "value": "#A7F3C1"
             },
             "success-dark": {
-                "value": "#94B79B"
+                "value": "#A7F3C1"
             },
             "warning": {
-                "value": "#EFDD9E"
+                "value": "#FFDE8A"
             },
             "warning-dark": {
-                "value": "#DECC8D"
+                "value": "#FFDE8A"
             },
             "error": {
-                "value": "#F6B3B3"
+                "value": "#FAA3BF"
             },
             "error-dark": {
-                "value": "#DE9E9E"
+                "value": "#FAA3BF"
             }
         }
     }
