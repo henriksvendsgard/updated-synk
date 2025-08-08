@@ -1,102 +1,103 @@
 @use "@fremtind/jokul/styles/core";
-@use "@fremtind/jokul/styles/fonts" with ($webfonts-dir: "../../src/fonts" // Dette er relativt til webfonts.sccs-fila i jokul-pakka
+@use "@fremtind/jokul/styles/fonts" with (
+	$webfonts-dir: "../../src/fonts" // Dette er relativt til webfonts.sccs-fila i jokul-pakka
 );
 @use "@fremtind/jokul/styles";
 @use "@fremtind/jokul/styles/core/jkl";
 
 body {
-    --max-width: 1440px;
-    --min-width: 320px;
-    background-color: var(--jkl-color-background-page);
+	--max-width: 1440px;
+	--min-width: 320px;
+	background-color: var(--jkl-color-background-page);
 }
 
 .jkl-portal-layout {
-    display: flex;
-    flex-direction: column;
-    column-gap: var(--jkl-unit-30);
-    max-width: var(--max-width);
-    padding: jkl.$spacing-24 jkl.$spacing-16;
+	display: flex;
+	flex-direction: column;
+	column-gap: var(--jkl-unit-30);
+	max-width: var(--max-width);
+	padding: jkl.$spacing-24 jkl.$spacing-16;
 
-    @media (width >=940px) {
-        padding: 0;
-        flex-direction: row;
+	@media (width >=940px) {
+		padding: 0;
+		flex-direction: row;
 
-        main {
-            padding: jkl.$spacing-40;
-        }
-    }
+		main {
+			padding: jkl.$spacing-40;
+		}
+	}
 }
 
 main {
-    flex-grow: 1;
+	flex-grow: 1;
 }
 
 .prose {
-    > * + * {
-        margin-block-start: var(--jkl-unit-30);
-    }
+	> * + * {
+		margin-block-start: var(--jkl-unit-30);
+	}
 
-    p {
-        @include jkl.text-style("body");
+	p {
+		@include jkl.text-style("body");
 
-        &:empty {
-            display: none;
-        }
-    }
+		&:empty {
+			display: none;
+		}
+	}
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5 {
-        &:not(:first-child) {
-            margin-block-start: var(--jkl-unit-40);
+	h1,
+	h2,
+	h3,
+	h4,
+	h5 {
+		&:not(:first-child) {
+			margin-block-start: var(--jkl-unit-40);
 
-            @include jkl.from-medium-device {
-                margin-block-start: var(--jkl-unit-60);
-            }
-        }
-    }
+			@include jkl.from-medium-device {
+				margin-block-start: var(--jkl-unit-60);
+			}
+		}
+	}
 
-    h2,
-    h3,
-    h4,
-    h5 {
-        & + * {
-            margin-block-start: var(--jkl-unit-10);
-        }
-    }
+	h2,
+	h3,
+	h4,
+	h5 {
+		& + * {
+			margin-block-start: var(--jkl-unit-10);
+		}
+	}
 
-    h1 {
-        @include jkl.text-style("title");
-    }
+	h1 {
+		@include jkl.text-style("title");
+	}
 
-    h2 {
-        @include jkl.text-style("heading-2");
-    }
+	h2 {
+		@include jkl.text-style("heading-2");
+	}
 
-    h3 {
-        @include jkl.text-style("heading-3");
-    }
+	h3 {
+		@include jkl.text-style("heading-3");
+	}
 
-    h4 {
-        @include jkl.text-style("heading-4");
-    }
+	h4 {
+		@include jkl.text-style("heading-4");
+	}
 
-    h5 {
-        @include jkl.text-style("heading-5");
-    }
+	h5 {
+		@include jkl.text-style("heading-5");
+	}
 
-    code,
-    samp {
-        @include jkl.use-font-family("Fremtind Grotesk Mono");
-    }
+	code,
+	samp {
+		@include jkl.use-font-family("General Sans");
+	}
 
-    code {
-        display: inline-block;
-        background-color: var(--jkl-color-background-container-low);
-        font-size: 0.9em;
-        padding: 0 var(--jkl-unit-10);
-        border-radius: jkl.rem(2px);
-    }
+	code {
+		display: inline-block;
+		background-color: var(--jkl-color-background-container-low);
+		font-size: 0.9em;
+		padding: 0 var(--jkl-unit-10);
+		border-radius: jkl.rem(2px);
+	}
 }
