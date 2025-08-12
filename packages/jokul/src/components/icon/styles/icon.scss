@@ -10,10 +10,23 @@
 	--jkl-icon-grade: -25;
 }
 
+@include jkl.comfortable-density-variables {
+	--jkl-icon-size: #{jkl.rem(24px)};
+	--jkl-icon-size-medium: #{jkl.rem(20px)};
+	--jkl-icon-size-small: #{jkl.rem(16px)};
+}
+
+@include jkl.compact-density-variables {
+	--jkl-icon-size: #{jkl.rem(18px)};
+	--jkl-icon-size-medium: #{jkl.rem(16px)};
+	--jkl-icon-size-small: #{jkl.rem(16px)};
+}
+
 .jkl-icon {
 	--jkl-icon-fill: 0;
 
 	@include base-styles;
+	height: var(--jkl-icon-size, #{jkl.rem(24px)});
 
 	svg {
 		width: var(--jkl-icon-size, #{jkl.rem(24px)});
@@ -32,21 +45,23 @@
 
 	&--medium {
 		--jkl-icon-opsz: 20;
-		width: #{jkl.rem(20px)};
-		height: #{jkl.rem(20px)};
+		font-size: var(--jkl-icon-size-medium, #{jkl.rem(20px)});
+		height: var(--jkl-icon-size-medium, #{jkl.rem(20px)});
 
 		svg {
-			width: #{jkl.rem(20px)};
-			height: #{jkl.rem(20px)};
+			width: var(--jkl-icon-size-medium, #{jkl.rem(20px)});
+			height: var(--jkl-icon-size-medium, #{jkl.rem(20px)});
 		}
 	}
 
 	&--small {
 		--jkl-icon-opsz: 20;
+		font-size: var(--jkl-icon-size-small, #{jkl.rem(16px)});
+		height: var(--jkl-icon-size-small, #{jkl.rem(16px)});
 
 		svg {
-			width: #{jkl.rem(16px)};
-			height: #{jkl.rem(16px)};
+			width: var(--jkl-icon-size-small, #{jkl.rem(16px)});
+			height: var(--jkl-icon-size-small, #{jkl.rem(16px)});
 		}
 	}
 
