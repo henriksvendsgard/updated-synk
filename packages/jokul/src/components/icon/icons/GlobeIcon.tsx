@@ -1,11 +1,11 @@
-import { Pencil } from "lucide-react";
+import { Globe } from "lucide-react";
 import React from "react";
 import { Icon, type IconComponent } from "../Icon.js";
 import type { IconProps } from "../types.js";
 
-export const PenIcon: IconComponent = (props: IconProps) => (
+export const GlobeIcon: IconComponent = (props: IconProps) => (
     <Icon {...props}>
-        <Pencil />
+        <Globe />
     </Icon>
 );
-PenIcon.displayName = "PenIcon";
+GlobeIcon.displayName = "GlobeIcon";

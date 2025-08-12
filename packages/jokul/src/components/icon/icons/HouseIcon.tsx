@@ -1,11 +1,11 @@
-import { Pencil } from "lucide-react";
+import { House } from "lucide-react";
 import React from "react";
 import { Icon, type IconComponent } from "../Icon.js";
 import type { IconProps } from "../types.js";
 
-export const PenIcon: IconComponent = (props: IconProps) => (
+export const HouseIcon: IconComponent = (props: IconProps) => (
     <Icon {...props}>
-        <Pencil />
+        <House />
     </Icon>
 );
-PenIcon.displayName = "PenIcon";
+HouseIcon.displayName = "HouseIcon";
