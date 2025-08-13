@@ -1,47 +1,34 @@
 @use "../../../core/jkl";
 @use "../../icon/styles/base-styles" as icon;
 
+$_north-east-arrow: "\ffea";
+
 .jkl-link {
 	--link-color: var(--jkl-color-text-default);
 
 	color: var(--link-color);
 	outline: none;
-	text-decoration: none;
 
 	@include jkl.motion("standard", "energetic");
 	transition-property: color;
 
-	&__content {
-		text-decoration: underline;
-		text-underline-offset: 0.08lh;
-		text-decoration-thickness: 0.05em;
-		text-decoration-color: rgb(from currentColor r g b / 70%);
-	}
-
-	&__icon {
-		margin-inline-start: 0.1em;
-		margin-block-start: -0.1em;
-		vertical-align: middle;
-	}
+	text-decoration: underline;
+	text-underline-offset: #{jkl.rem(6px)};
+	text-decoration-thickness: 0.05em;
+	text-decoration-color: rgb(from currentColor r g b / 70%);
 
 	&--external::after,
 	&[target="_blank"]::after {
-		--jkl-icon-fill: 0;
-		--jkl-icon-size: 1em;
-		--jkl-icon-opsz: 20;
-
-		margin-block-start: -0.1em;
-		padding-inline-start: 0.2em;
-		vertical-align: middle;
-
-		@include icon.base-styles;
+		@include jkl.decorative($content: $_north-east-arrow);
+		font-family: "Synk Lucide Icons", sans-serif;
+		font-size: 1.2em;
 
 		// Trengs for at non breaking space skal ha effekt
 		display: inline;
 	}
 
 	&:hover:not(:focus) {
-		--link-color: var(--jkl-color-text-subdued);
+		--link-color: var(--jkl-color-text-interactive-hover);
 	}
 
 	&:focus-visible {
