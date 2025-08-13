@@ -36,7 +36,7 @@
 
 		// Unngå at endring av tittel knekker visuell regresjonstest ved å skjule den
 		:not([data-test-mode="e2e"]) &::before {
-			color: var(--component-example-header-color);
+			color: var(--jkl-color-background-container-contrast);
 			position: absolute;
 			top: jkl.$spacing-12;
 			left: jkl.$spacing-16;
