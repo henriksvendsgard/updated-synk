@@ -51,7 +51,7 @@
 	user-select: none;
 	background: var(--background-color);
 	color: var(--text-color);
-	border: unset;
+	border: var(--border-width) solid var(--border-color);
 	text-decoration: none;
 	-webkit-tap-highlight-color: transparent;
 
@@ -124,12 +124,17 @@
 	}
 
 	&:hover {
-		background-color: color-mix(in srgb, var(--background-color), var(--text-color) 15%);
+		background-color: color-mix(
+			in srgb,
+			var(--background-color),
+			var(--text-color) 15%
+		);
 	}
 
 	&--primary,
 	&--secondary,
-	&--ghost {
+	&--ghost,
+	&--tertiary {
 		--border-radius: 999px;
 	}
 
@@ -139,19 +144,17 @@
 	}
 
 	&--secondary {
-		border: var(--border-width) solid var(--text-color);
+		--border-color: transparent;
+		--background-color: var(--jkl-color-background-secondary-action);
 	}
 
 	&--tertiary {
-		border-bottom: var(--border-width) solid var(--text-color);
-		padding-inline: var(--jkl-button-teritary-padding-icon);
+		--border-color: var(--jkl-color-border-action);
+		--background-color: transparent;
+	}
 
-		&:has(.jkl-icon:first-child) {
-			padding-inline: var(--jkl-button-teritary-padding-icon) calc(var(--jkl-button-teritary-padding-icon) * 2);
-		}
-
-		&:has(.jkl-icon:last-child) {
-			padding-inline: calc(var(--jkl-button-teritary-padding-icon) * 2) var(--jkl-button-teritary-padding-icon);
-		}
+	&--ghost {
+		--border-color: transparent;
+		--background-color: transparent;
 	}
 }
