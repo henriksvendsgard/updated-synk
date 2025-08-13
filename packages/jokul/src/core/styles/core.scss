@@ -33,14 +33,19 @@
 
 :root {
 	@each $level, $values in typography.$text-styles {
-		@each $property, $value in map.get(typography.$text-styles, $level, "small-screen") {
+		@each $property,
+			$value in map.get(typography.$text-styles, $level, "small-screen")
+		{
 			--jkl-#{$level}-#{$property}: #{$value};
 		}
 	}
 
 	@include jkl.from-medium-device {
 		@each $level, $values in typography.$text-styles {
-			@each $property, $value in map.get(typography.$text-styles, $level, "large-screen") {
+			@each $property,
+				$value
+					in map.get(typography.$text-styles, $level, "large-screen")
+			{
 				--jkl-#{$level}-#{$property}: #{$value};
 			}
 		}
@@ -52,7 +57,7 @@
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 
-	background-color: var(--jkl-background-color);
+	background-color: var(--jkl-color-background-page);
 	color: var(--jkl-color);
 
 	strong {
