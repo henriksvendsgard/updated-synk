@@ -27,6 +27,8 @@
 
 	@include base-styles;
 	height: var(--jkl-icon-size, #{jkl.rem(24px)});
+	font-size: var(--jkl-icon-size, #{jkl.rem(24px)});
+	display: inline-block;
 
 	svg {
 		width: var(--jkl-icon-size, #{jkl.rem(24px)});
@@ -45,7 +47,7 @@
 
 	&--medium {
 		--jkl-icon-opsz: 20;
-		font-size: var(--jkl-icon-size-medium, #{jkl.rem(20px)});
+		font-size: jkl.rem(24px);
 		height: var(--jkl-icon-size-medium, #{jkl.rem(20px)});
 
 		svg {
@@ -56,7 +58,7 @@
 
 	&--small {
 		--jkl-icon-opsz: 20;
-		font-size: var(--jkl-icon-size-small, #{jkl.rem(16px)});
+		font-size: var(--jkl-icon-size-small, #{jkl.rem(20px)});
 		height: var(--jkl-icon-size-small, #{jkl.rem(16px)});
 
 		svg {
@@ -69,9 +71,12 @@
 		--jkl-icon-opsz: 20;
 		--jkl-icon-size: 1em;
 
+		font-size: 1em;
+
 		svg {
 			width: 1em;
 			height: 1em;
+			margin-bottom: unset;
 		}
 	}
 
