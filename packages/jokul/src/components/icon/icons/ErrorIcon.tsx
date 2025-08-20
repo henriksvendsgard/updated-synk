@@ -4,7 +4,7 @@ import { Icon, type IconComponent } from "../Icon.js";
 import type { IconProps } from "../types.js";
 
 export const ErrorIcon: IconComponent = (props: IconProps) => (
-    <Icon bold filled {...props}>
+    <Icon {...props}>
         <CircleX />
     </Icon>
 );
