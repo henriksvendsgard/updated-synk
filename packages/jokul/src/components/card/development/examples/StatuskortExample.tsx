@@ -6,6 +6,7 @@ import type {
 import grass400 from "/img/grass-400.jpg";
 import grass800 from "/img/grass-800.jpg";
 import grassThumbnail from "/img/grass-thumbnail.jpg";
+import { Flex } from "../../../flex/Flex.jsx";
 import { Image } from "../../../image/Image.js";
 import { SuccessTag } from "../../../tag/Tag.js";
 import { Card } from "../../Card.js";
@@ -48,19 +49,13 @@ export const StatuskortExample = ({
         >
             <CardImage as={Image} placement="top" {...imageProps} />
             <SuccessTag>Behandles</SuccessTag>
-            <div
-                style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "4px",
-                }}
-            >
+            <Flex direction="column" gap={4}>
                 <p className="jkl-heading-2">
                     Behandlings- og veterinærutgifter
                     <span aria-hidden> →</span>
                 </p>
                 <p className="jkl-body">Balder</p>
-            </div>
+            </Flex>
             <hr
                 style={{
                     margin: 0,

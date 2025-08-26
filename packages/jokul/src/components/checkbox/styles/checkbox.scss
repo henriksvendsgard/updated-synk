@@ -61,6 +61,10 @@
 		0;
 	--jkl-checkbox-checkmark-bottom: 56%;
 	--jkl-checkbox-checkmark-left: 6%;
+
+	@include jkl.small-device {
+		--jkl-checkbox-checkmark-left: 10%;
+	}
 }
 
 $_checkbox-checked-animation-name: jkl-checkbox-checked-#{string.unique-id()};

@@ -2,11 +2,12 @@
 @use "../../../core/jkl";
 
 .jkl-card {
+	--jkl-card-padding-xs: #{jkl.$spacing-4};
 	--padding-s: var(--jkl-unit-05);
 	--padding-m: var(--jkl-unit-15);
 	--padding-l: var(--jkl-unit-20);
 	--padding-xl: var(--jkl-unit-30);
-	--border-radius: #{jkl.rem(4px)};
+	--border-radius: #{jkl.rem(16px)};
 	--border-color: transparent;
 	--border-width: #{jkl.rem(1px)};
 	--background-color: transparent;
@@ -21,10 +22,6 @@
 	text-decoration: none;
 	color: var(--jkl-color-text-default);
 
-	&:has(.jkl-card-image) {
-		--border-radius: #{jkl.rem(16px)};
-	}
-
 	&::after {
 		content: "";
 		position: absolute;
@@ -37,10 +34,15 @@
 	}
 
 	@include jkl.from-medium-device {
+		--jkl-card-padding-xs: #{jkl.$spacing-8};
 		--padding-s: var(--jkl-unit-10);
 		--padding-m: var(--jkl-unit-20);
 		--padding-l: var(--jkl-unit-30);
 		--padding-xl: var(--jkl-unit-40);
+	}
+
+	&[data-padding="xs"] {
+		--padding: var(--jkl-card-padding-xs);
 	}
 
 	&[data-padding="s"] {
@@ -64,11 +66,16 @@
 	}
 
 	&--highlighted {
-		--background-color: var(--jkl-color-background-container-highlighted);
+		--background-color: var(--jkl-color-background-container-high);
 	}
 
 	&--subdued {
 		--background-color: var(--jkl-color-background-container-subdued);
+	}
+
+	&--outlined {
+		outline: #{jkl.rem(1px)} solid var(--jkl-color-border-separator);
+		outline-offset: #{jkl.rem(-1px)};
 	}
 
 	&[data-clickable="true"] {
