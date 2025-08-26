@@ -72,7 +72,7 @@ $_dismiss-hover-color: jkl.$color-stein;
 		@include jkl.use-font-variables("jkl-message-content");
 
 		margin-top: jkl.rem(
-			-2px
+			-3px
 		); // Offset for å aligne med ikon hvis uten tittel.
 	}
 

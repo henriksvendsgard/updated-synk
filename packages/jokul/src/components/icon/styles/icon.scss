@@ -47,7 +47,7 @@
 
 	&--medium {
 		--jkl-icon-opsz: 20;
-		font-size: jkl.rem(24px);
+		font-size: var(--jkl-icon-size-medium, #{jkl.rem(24px)});
 		height: var(--jkl-icon-size-medium, #{jkl.rem(20px)});
 
 		svg {
@@ -58,7 +58,7 @@
 
 	&--small {
 		--jkl-icon-opsz: 20;
-		font-size: var(--jkl-icon-size-small, #{jkl.rem(20px)});
+		font-size: var(--jkl-icon-size-small, #{jkl.rem(16px)});
 		height: var(--jkl-icon-size-small, #{jkl.rem(16px)});
 
 		svg {
@@ -87,7 +87,7 @@
 
 .jkl-icon-red-cross {
 	--red-cross-circle: var(--jkl-color-background-alert-error);
-	--red-cross-path: #{jkl.$color-brand-granitt};
+	--red-cross-path: #{jkl.$color-brand-obsidian};
 
 	width: jkl.rem(24px);
 	height: jkl.rem(24px);
@@ -103,7 +103,7 @@
 
 .jkl-icon-green-check {
 	--green-check-circle: var(--jkl-color-background-alert-success);
-	--green-check-path: #{jkl.$color-brand-granitt};
+	--green-check-path: #{jkl.$color-brand-obsidian};
 
 	width: jkl.rem(24px);
 	height: jkl.rem(24px);

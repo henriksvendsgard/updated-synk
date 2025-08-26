@@ -3,7 +3,7 @@
 @use "../../../core/jkl";
 @use "../../../core/jkl/colors";
 
-$_combobox-focus-color: jkl.$color-granitt;
+$_combobox-focus-color: jkl.$color-obsidian;
 $_combobox-search-input-selection-color: color.scale(
 	$color: $_combobox-focus-color,
 	$alpha: -80%,
@@ -16,13 +16,13 @@ $_combobox-search-input-selection-color--inverted: color.scale(
 );
 
 @include jkl.light-mode-variables {
-	--jkl-combobox-marked-value-border: #{jkl.$color-granitt};
+	--jkl-combobox-marked-value-border: #{jkl.$color-obsidian};
 	--jkl-combobox-marked-value-shadow: #{jkl.$color-snohvit};
 }
 
 @include jkl.dark-mode-variables {
 	--jkl-combobox-marked-value-border: #{jkl.$color-snohvit};
-	--jkl-combobox-marked-value-shadow: #{jkl.$color-granitt};
+	--jkl-combobox-marked-value-shadow: #{jkl.$color-obsidian};
 }
 
 @include jkl.comfortable-density-variables {

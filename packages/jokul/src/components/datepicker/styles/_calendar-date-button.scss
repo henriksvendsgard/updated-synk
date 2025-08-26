@@ -5,7 +5,7 @@
 	--jkl-calendar-disabled-day-color: #{jkl.$color-svaberg};
 	--jkl-calendar-active-day-color: #{jkl.$color-hvit};
 	--jkl-calendar-hover-date-background-color: #{jkl.$color-dis};
-	--jkl-calendar-selected-date-background-color: #{jkl.$color-granitt};
+	--jkl-calendar-selected-date-background-color: #{jkl.$color-obsidian};
 }
 
 @include jkl.dark-mode-variables {

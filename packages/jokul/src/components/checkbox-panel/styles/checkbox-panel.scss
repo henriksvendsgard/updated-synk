@@ -4,87 +4,114 @@
 
 $_checkbox-checked-animation-name: jkl-checkbox-checked-#{string.unique-id()};
 
-@keyframes #{$_checkbox-checked-animation-name} {
-    0% {
-        width: 0;
-        height: 0;
-    }
+@include jkl.comfortable-density-variables {
+	--jkl-checkbox-panel-checkmark-bottom: 56%;
+	--jkl-checkbox-panel-checkmark-left: 8%;
 
-    40% {
-        width: 18%;
-        height: 0;
-    }
+	@include jkl.small-device {
+		--jkl-checkbox-panel-checkmark-bottom: 46%;
+		--jkl-checkbox-panel-checkmark-left: 8%;
+	}
+}
 
-    100% {
-        width: 18%;
-        height: 58%;
-    }
+@include jkl.compact-density-variables {
+	--jkl-checkbox-panel-checkmark-bottom: 65%;
+	--jkl-checkbox-panel-checkmark-left: -6%;
+
+	@include jkl.small-device {
+		--jkl-checkbox-panel-checkmark-bottom: 50%;
+		--jkl-checkbox-panel-checkmark-left: -6%;
+	}
 }
 
 .jkl-checkbox-panel {
-    --checkbox-background-color: transparent;
-    --checkbox-box-color: var(--jkl-color-border-action);
-    --checkbox-check-color: var(--jkl-color-border-action);
+	--checkbox-background-color: var(--jkl-color-background-input-base);
+	--checkbox-box-color: var(--jkl-color-border-action);
+	--checkbox-check-color: var(--jkl-color-border-action);
 
-    // The box
-    &__decorator {
-        box-sizing: border-box;
-        height: var(--jkl-checkbox-box-size);
-        width: var(--jkl-checkbox-box-size);
-        position: relative;
+	// The box
+	&__decorator {
+		box-sizing: border-box;
+		height: var(--jkl-checkbox-box-size);
+		width: var(--jkl-checkbox-box-size);
+		position: relative;
 
-        outline: none;
-        border-radius: 0; // fixes rounded corners in iOS Safari
-        border: 1px solid;
-        border-color: var(--checkbox-box-color);
-        background-color: var(--checkbox-background-color);
+		outline: none;
+		border-radius: 0; // fixes rounded corners in iOS Safari
+		border: 1px solid;
+		border-color: var(--checkbox-box-color);
+		background-color: var(--checkbox-background-color);
 
-        @include jkl.motion;
-        transition-property: background-color;
+		@include jkl.motion;
+		transition-property: background-color;
 
-        @include jkl.forced-colors-mode {
-            outline: revert;
-            border: 1px solid ButtonText;
-        }
+		@include jkl.forced-colors-mode {
+			outline: revert;
+			border: 1px solid ButtonText;
+		}
 
-        // The check
-        &::after {
-            content: "";
-            position: absolute;
-            transform-origin: bottom left;
-            bottom: 42%;
-            left: 18%;
+		// The check
+		// &::after {
+		// 	content: "";
+		// 	position: absolute;
+		// 	transform-origin: bottom left;
+		// 	bottom: 42%;
+		// 	left: 18%;
 
-            display: block;
-            width: 18%;
-            height: 58%;
-            transform: rotate(45deg);
+		// 	display: block;
+		// 	width: 18%;
+		// 	height: 58%;
+		// 	transform: rotate(45deg);
 
-            border: solid jkl.rem(2px) var(--checkbox-check-color);
-            border-left-width: 0;
-            border-top-width: 0;
+		// 	border: solid jkl.rem(2px) var(--checkbox-check-color);
+		// 	border-left-width: 0;
+		// 	border-top-width: 0;
 
-            opacity: 0;
+		// 	opacity: 0;
 
-            @include jkl.motion;
-            transition-property: opacity, border-color;
+		// 	@include jkl.motion;
+		// 	transition-property: opacity, border-color;
 
-            @include jkl.forced-colors-mode {
-                border-color: ButtonText;
-            }
-        }
-    }
+		// 	@include jkl.forced-colors-mode {
+		// 		border-color: ButtonText;
+		// 	}
+		// }
+		$_checkmark: "\ffe2"; // unicode font icon for checkmark
+		&::after {
+			content: $_checkmark;
+			font-family: "Synk Lucide Icons", sans-serif;
+			position: absolute;
+			bottom: var(--jkl-checkbox-panel-checkmark-bottom);
+			left: var(--jkl-checkbox-panel-checkmark-left);
 
-    &:has(:checked) &__decorator {
-        &::after {
-            animation: $_checkbox-checked-animation-name
-                jkl.timing("productive") ease-in-out forwards;
-            opacity: 1;
-        }
-    }
+			display: block;
+			font-size: 18px;
+			width: 18%;
+			height: 58%;
 
-    &:has([aria-invalid="true"]) {
-        --checkbox-background-color: var(--jkl-color-background-alert-error);
-        --checkbox-check-color: var(--jkl-color-text-on-alert);
-    }
+			color: var(--jkl-checkbox-checkmark-color);
+
+			opacity: 0;
+
+			@include jkl.motion;
+			transition-property: opacity, border-color;
+
+			@include jkl.forced-colors-mode {
+				border-color: ButtonText;
+			}
+		}
+	}
+
+	&:has(:checked) &__decorator {
+		&::after {
+			animation: $_checkbox-checked-animation-name
+				jkl.timing("productive") ease-in-out forwards;
+			opacity: 1;
+		}
+	}
+
+	&:has([aria-invalid="true"]) {
+		--checkbox-background-color: var(--jkl-color-background-alert-error);
+		--checkbox-check-color: var(--jkl-color-text-on-alert);
+	}
 }

@@ -15,7 +15,7 @@
 
 @include jkl.light-mode-variables {
 	--jkl-background-color: #{jkl.$color-snohvit};
-	--jkl-color: #{jkl.$color-granitt};
+	--jkl-color: #{jkl.$color-obsidian};
 	--jkl-error: #{jkl.$color-feil};
 	--jkl-info: #{jkl.$color-info};
 	--jkl-warning: #{jkl.$color-advarsel};
@@ -23,7 +23,7 @@
 }
 
 @include jkl.dark-mode-variables {
-	--jkl-background-color: #{jkl.$color-granitt};
+	--jkl-background-color: #{jkl.$color-obsidian};
 	--jkl-color: #{jkl.$color-snohvit};
 	--jkl-error: #{jkl.$color-feil-dark};
 	--jkl-info: #{jkl.$color-info-dark};
