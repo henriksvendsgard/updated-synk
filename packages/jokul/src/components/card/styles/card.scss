@@ -74,7 +74,7 @@
 	}
 
 	&--outlined {
-		outline: #{jkl.rem(1px)} solid var(--jkl-color-border-separator);
+		outline: #{jkl.rem(1px)} solid var(--jkl-color-border-subdued);
 		outline-offset: #{jkl.rem(-1px)};
 	}
 
