@@ -134,10 +134,10 @@
         },
         "functional": {
             "info": {
-                "value": "#F6E8FF"
+                "value": "#E0B5FD"
             },
             "info-dark": {
-                "value": "#F6E8FF"
+                "value": "#E0B5FD"
             },
             "success": {
                 "value": "#A7F3C1"
