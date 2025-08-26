@@ -87,7 +87,7 @@
 
 .jkl-icon-red-cross {
 	--red-cross-circle: var(--jkl-color-background-alert-error);
-	--red-cross-path: #{jkl.$color-brand-obsidian};
+	--red-cross-path: #{jkl.$color-obsidian};
 
 	width: jkl.rem(24px);
 	height: jkl.rem(24px);
@@ -103,7 +103,7 @@
 
 .jkl-icon-green-check {
 	--green-check-circle: var(--jkl-color-background-alert-success);
-	--green-check-path: #{jkl.$color-brand-obsidian};
+	--green-check-path: #{jkl.$color-obsidian};
 
 	width: jkl.rem(24px);
 	height: jkl.rem(24px);

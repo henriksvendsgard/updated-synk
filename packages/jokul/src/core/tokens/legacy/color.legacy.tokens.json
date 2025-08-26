@@ -30,6 +30,33 @@
         "snohvit": {
             "value": "#f9f9f9"
         },
+        "obsidian": {
+            "value": "#18121C"
+        },
+        "kull": {
+            "value": "#241B28"
+        },
+        "lavendel": {
+            "value": "#7A23A6"
+        },
+        "ametyst": {
+            "value": "#A836E7"
+        },
+        "orkide": {
+            "value": "#BA58F4"
+        },
+        "iris": {
+            "value": "#CE87FA"
+        },
+        "pion": {
+            "value": "#F6E8FF"
+        },
+        "silke": {
+            "value": "#EED7FE"
+        },
+        "perle": {
+            "value": "#F6E8FF"
+        },
         "hvit": {
             "value": "#fff"
         },
