@@ -14,13 +14,10 @@
                 },
                 "family": {
                     "regular": {
-                        "value": "'Fremtind Grotesk, Adjusted Arial Fallback, Arial, sans-serif'"
+                        "value": "'General Sans, Adjusted Arial Fallback, Arial, sans-serif'"
                     },
                     "display": {
-                        "value": "'Fremtind Grotesk Display, Adjusted Arial Display Fallback, Arial, sans-serif'"
-                    },
-                    "mono": {
-                        "value": "'Fremtind Grotesk Mono, Adjusted Courier New Fallback, -apple-system, BlinkMacSystemFont, monospace'"
+                        "value": "'Cabinet Grotesk, Adjusted Arial Display Fallback, Arial, sans-serif'"
                     }
                 },
                 "size": {

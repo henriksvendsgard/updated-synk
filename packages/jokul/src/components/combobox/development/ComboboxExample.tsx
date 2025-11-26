@@ -89,7 +89,6 @@ export const ComboboxExample: FC<ExampleComponentProps> = ({
             id="produsent"
             name="produsent"
             placeholder="Søk"
-            width="220px"
             labelProps={{ variant }}
             helpLabel={helpLabel}
             errorLabel={errorLabel}

@@ -3,155 +3,158 @@
 @use "../../../core/jkl";
 
 @include jkl.comfortable-density-variables {
-    --jkl-button-padding-block: #{jkl.$unit-10};
-    --jkl-button-padding-text: #{jkl.$unit-30};
-    --jkl-button-padding-icon: #{jkl.$unit-20};
-    --jkl-button-padding-icon-button: #{jkl.$unit-10};
-    --jkl-button-teritary-padding-icon: #{jkl.$unit-05};
-    --jkl-button-font-size: #{jkl.$typography-body-small-font-size};
-    --jkl-button-line-height: #{jkl.$typography-body-small-line-height};
+	--jkl-button-padding-block: #{jkl.$unit-10};
+	--jkl-button-padding-text: #{jkl.$unit-30};
+	--jkl-button-padding-icon: #{jkl.$unit-20};
+	--jkl-button-padding-icon-button: #{jkl.$unit-10};
+	--jkl-button-teritary-padding-icon: #{jkl.$unit-05};
+	--jkl-button-font-size: #{jkl.$typography-body-small-font-size};
+	--jkl-button-line-height: #{jkl.$typography-body-small-line-height};
 
-    @include jkl.from-medium-device {
-        --jkl-button-font-size: #{jkl.$typography-body-base-font-size};
-        --jkl-button-line-height: #{jkl.$typography-body-base-line-height};
-    }
+	@include jkl.from-medium-device {
+		--jkl-button-font-size: #{jkl.$typography-body-base-font-size};
+		--jkl-button-line-height: #{jkl.$typography-body-base-line-height};
+	}
 }
 
 @include jkl.compact-density-variables {
-    --jkl-button-padding-block: #{jkl.$unit-05};
-    --jkl-button-padding-text: #{jkl.$unit-15};
-    --jkl-button-padding-icon: #{jkl.$unit-10};
-    --jkl-button-padding-icon-button: #{jkl.$unit-05};
-    --jkl-button-teritary-padding-icon: #{jkl.$unit-02};
-    --jkl-button-padding-ghost-inline: #{jkl.$unit-05};
-    --jkl-button-font-size: #{jkl.$typography-small-small-font-size};
-    --jkl-button-line-height: #{jkl.$typography-small-small-line-height};
+	--jkl-button-padding-block: #{jkl.$unit-05};
+	--jkl-button-padding-text: #{jkl.$unit-15};
+	--jkl-button-padding-icon: #{jkl.$unit-10};
+	--jkl-button-padding-icon-button: #{jkl.$unit-05};
+	--jkl-button-teritary-padding-icon: #{jkl.$unit-02};
+	--jkl-button-padding-ghost-inline: #{jkl.$unit-05};
+	--jkl-button-font-size: #{jkl.$typography-small-small-font-size};
+	--jkl-button-line-height: #{jkl.$typography-small-small-line-height};
 
-    @include jkl.from-medium-device {
-        --jkl-button-font-size: #{jkl.$typography-small-base-font-size};
-        --jkl-button-line-height: #{jkl.$typography-small-base-line-height};
-        --jkl-button-icon-weight: #{jkl.$icon-weight-bold};
-    }
+	@include jkl.from-medium-device {
+		--jkl-button-font-size: #{jkl.$typography-small-base-font-size};
+		--jkl-button-line-height: #{jkl.$typography-small-base-line-height};
+		--jkl-button-icon-weight: #{jkl.$icon-weight-bold};
+	}
 }
 
 .jkl-button {
-    --jkl-icon-weight: var(--jkl-button-icon-weight, initial);
-    --text-color: var(--jkl-color-text-default);
-    --background-color: transparent;
-    --border-radius: 0;
-    --border-width: #{jkl.rem(1px)}; // For secondary og tertiary button
+	--jkl-icon-weight: var(--jkl-button-icon-weight, initial);
+	--text-color: var(--jkl-color-text-default);
+	--background-color: transparent;
+	--border-radius: 0;
+	--border-width: #{jkl.rem(1px)}; // For secondary og tertiary button
 
-    display: inline-block;
+	display: inline-block;
 
-    font-weight: #{jkl.$typography-weight-bold};
-    font-size: var(--jkl-button-font-size);
-    line-height: var(--jkl-button-line-height);
+	font-weight: #{jkl.$typography-weight-semibold};
+	font-size: var(--jkl-button-font-size);
+	line-height: var(--jkl-button-line-height);
 
-    cursor: pointer;
-    user-select: none;
-    background: var(--background-color);
-    color: var(--text-color);
-    border: unset;
-    text-decoration: none;
-    -webkit-tap-highlight-color: transparent;
+	cursor: pointer;
+	user-select: none;
+	background: var(--background-color);
+	color: var(--text-color);
+	border: var(--border-width) solid var(--border-color);
+	text-decoration: none;
+	-webkit-tap-highlight-color: transparent;
 
-    border-radius: var(--border-radius);
-    padding-inline: var(--jkl-button-padding-text);
-    padding-block: var(--jkl-button-padding-block);
-    position: relative;
-    overflow: hidden;
-    max-width: 100%;
-    animation: a 0.3s linear;
+	border-radius: var(--border-radius);
+	padding-inline: var(--jkl-button-padding-text);
+	padding-block: var(--jkl-button-padding-block);
+	position: relative;
+	overflow: hidden;
+	max-width: 100%;
+	animation: a 0.3s linear;
 
-    @include jkl.motion("standard", "productive", background-color);
+	@include jkl.motion("standard", "productive", background-color);
 
-    &:has(.jkl-icon:first-child) {
-        padding-inline-start: var(--jkl-button-padding-icon);
-    }
+	&:has(.jkl-icon:first-child) {
+		padding-inline-start: var(--jkl-button-padding-icon);
+	}
 
-    &:has(.jkl-icon:last-child) {
-        padding-inline-end: var(--jkl-button-padding-icon);
-    }
+	&:has(.jkl-icon:last-child) {
+		padding-inline-end: var(--jkl-button-padding-icon);
+	}
 
-    &:has(.jkl-icon:first-child):has(.jkl-icon:last-child) {
-        padding-inline: var(--jkl-button-padding-icon-button);
-    }
+	&:has(.jkl-icon:first-child):has(.jkl-icon:last-child) {
+		padding-inline: var(--jkl-button-padding-icon-button);
+	}
 
-    &__label {
-        @include jkl.motion("standard", "expressive", translate);
+	&__label {
+		@include jkl.motion("standard", "expressive", translate);
 
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: jkl.$unit-02;
-        pointer-events: none;
-    }
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: jkl.$unit-02;
+		pointer-events: none;
+	}
 
-    &__loader {
-        @include jkl.motion("standard", "expressive", opacity, translate);
+	&__loader {
+		@include jkl.motion("standard", "expressive", opacity, translate);
 
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        translate: -50% 350%;
-        opacity: 0;
-        pointer-events: none;
-    }
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		translate: -50% 350%;
+		opacity: 0;
+		pointer-events: none;
+	}
 
-    &__text {
-        // Håndter tekster som er lenger enn knappen
-        // Knappen vokser til teksten, men kan f.eks. begrenses
-        // av sidebredde på mobil
-        width: 100%;
-        max-width: 100%;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-    }
+	&__text {
+		// Håndter tekster som er lenger enn knappen
+		// Knappen vokser til teksten, men kan f.eks. begrenses
+		// av sidebredde på mobil
+		width: 100%;
+		max-width: 100%;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
 
-    &[data-loading="true"] &__label {
-        translate: 0 -120%;
-    }
+	&[data-loading="true"] &__label {
+		translate: 0 -120%;
+	}
 
-    &[data-loading="true"] &__loader {
-        translate: -50% -50%;
-        opacity: 1;
-    }
+	&[data-loading="true"] &__loader {
+		translate: -50% -50%;
+		opacity: 1;
+	}
 
-    &:focus-visible {
-        @include jkl.focus-outline;
-    }
+	&:focus-visible {
+		@include jkl.focus-outline;
+	}
 
-    &:hover {
-        background-color: color-mix(in srgb, var(--background-color), var(--text-color) 15%);
-    }
+	&:hover {
+		background-color: color-mix(
+			in srgb,
+			var(--background-color),
+			var(--text-color) 15%
+		);
+	}
 
-    &--primary,
-    &--secondary,
-    &--ghost {
-        --border-radius: 999px;
-    }
+	&--primary,
+	&--secondary,
+	&--ghost,
+	&--tertiary {
+		--border-radius: 999px;
+	}
 
-    &--primary {
-        --background-color: var(--jkl-color-background-action);
-        --text-color: var(--jkl-color-text-on-action);
-    }
+	&--primary {
+		--background-color: var(--jkl-color-background-action);
+		--text-color: var(--jkl-color-text-on-action);
+	}
 
-    &--secondary {
-        border: var(--border-width) solid var(--text-color);
-    }
+	&--secondary {
+		--border-color: transparent;
+		--background-color: var(--jkl-color-background-secondary-action);
+	}
 
-    &--tertiary {
-        border-bottom: var(--border-width) solid var(--text-color);
-        padding-inline: var(--jkl-button-teritary-padding-icon);
+	&--tertiary {
+		--border-color: var(--jkl-color-border-action);
+		--background-color: transparent;
+	}
 
-        &:has(.jkl-icon:first-child) {
-            padding-inline: var(--jkl-button-teritary-padding-icon) calc(var(--jkl-button-teritary-padding-icon) * 2);
-        }
-
-        &:has(.jkl-icon:last-child) {
-            padding-inline: calc(var(--jkl-button-teritary-padding-icon) * 2) var(--jkl-button-teritary-padding-icon);
-        }
-    }
+	&--ghost {
+		--border-color: transparent;
+		--background-color: transparent;
+	}
 }

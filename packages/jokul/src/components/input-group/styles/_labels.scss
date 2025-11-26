@@ -2,149 +2,154 @@
 @use "../../../core/jkl";
 
 .jkl-dormant-form-support-label {
-    display: none;
-    opacity: 0;
-    pointer-events: none;
+	display: none;
+	opacity: 0;
+	pointer-events: none;
 }
 
 $_support-icon-entrance-animation-name: jkl-support-icon-entrance-#{string.unique-id(
-    
-)};
+
+	)};
 
 @include jkl.comfortable-density-variables {
-    @include jkl.declare-font-variables("jkl-form-support-label", "small");
-    $_icon-size: jkl.rem(20px);
+	@include jkl.declare-font-variables("jkl-form-support-label", "small");
+	$_icon-size: jkl.rem(16px);
 
-    --jkl-form-support-label-margin: #{jkl.$spacing-8} 0 0;
-    --jkl-form-support-label-icon-size: #{$_icon-size};
-    --jkl-form-support-label-icon-margin: 0 -#{$_icon-size} -#{jkl.rem(6px)} 0;
+	--jkl-form-support-label-margin: #{jkl.$spacing-8} 0 0;
+	--jkl-form-support-label-icon-size: #{$_icon-size};
+	--jkl-form-support-label-icon-margin: #{jkl.rem(
+			4px
+		)} -#{$_icon-size} -#{jkl.rem(6px)}
+		0;
 }
 
 @include jkl.compact-density-variables {
-    $_icon-size: jkl.rem(22px);
+	$_icon-size: jkl.rem(16px);
 
-    --jkl-form-support-label-icon-size: #{$_icon-size};
-    --jkl-form-support-label-icon-margin: 0 -#{$_icon-size} -#{jkl.rem(5px)} 0;
+	--jkl-form-support-label-icon-size: #{$_icon-size};
+	--jkl-form-support-label-icon-margin: #{jkl.rem(
+			4px
+		)} -#{$_icon-size} -#{jkl.rem(5px)}
+		0;
 }
 
 .jkl-form-support-label {
-    --color: var(--jkl-color-text-subdued);
+	--color: var(--jkl-color-text-subdued);
 
-    @include jkl.use-font-variables("jkl-form-support-label");
-    @include jkl.motion("standard", "lazy");
+	@include jkl.use-font-variables("jkl-form-support-label");
+	@include jkl.motion("standard", "lazy");
 
-    display: flex;
-    margin: var(--jkl-form-support-label-margin);
-    color: var(--color);
-    transition-property: color;
-    transition-delay: jkl.timing("productive");
+	display: flex;
+	margin: var(--jkl-form-support-label-margin);
+	color: var(--color);
+	transition-property: color;
+	transition-delay: jkl.timing("productive");
 
-    &__icon,
-    &__icon.jkl-icon {
-        opacity: 0;
-        height: var(--jkl-form-support-label-icon-size);
-        margin: var(--jkl-form-support-label-icon-margin);
+	&__icon,
+	&__icon.jkl-icon {
+		opacity: 0;
+		height: var(--jkl-form-support-label-icon-size);
+		margin: var(--jkl-form-support-label-icon-margin);
 
-        @include jkl.forced-colors-svg-fallback(
-            $stroke: CanvasText,
-            $fill: Canvas,
-        );
-    }
+		@include jkl.forced-colors-svg-fallback(
+			$stroke: CanvasText,
+			$fill: Canvas
+		);
+	}
 
-    &--error,
-    &--warning,
-    &--success {
-        --color: var(--jkl-color-text-default);
+	&--error,
+	&--warning,
+	&--success {
+		--color: var(--jkl-color-text-default);
 
-        .jkl-form-support-label__icon {
-            animation: jkl.timing("lazy") cubic-bezier(0, 0, 0.3, 1)
-                jkl.timing("expressive") $_support-icon-entrance-animation-name
-                forwards;
-        }
-    }
+		.jkl-form-support-label__icon {
+			animation: jkl.timing("lazy") cubic-bezier(0, 0, 0.3, 1)
+				jkl.timing("expressive") $_support-icon-entrance-animation-name
+				forwards;
+		}
+	}
 
-    &--sr-only {
-        @include jkl.screenreader-only;
-    }
+	&--sr-only {
+		@include jkl.screenreader-only;
+	}
 }
 
 @include jkl.comfortable-density-variables {
-    $_label-spacing-12mall: jkl.$spacing-4;
-    $_label-spacing-16edium: jkl.$spacing-8;
-    $_label-spacing-24arge: jkl.$spacing-16;
+	$_label-spacing-12mall: jkl.$spacing-4;
+	$_label-spacing-16edium: jkl.$spacing-8;
+	$_label-spacing-24arge: jkl.$spacing-16;
 
-    --jkl-label-small-margin: 0 0 #{$_label-spacing-12mall} 0;
-    --jkl-label-medium-margin: 0 0 #{$_label-spacing-16edium} 0;
-    --jkl-label-large-margin: 0 0 #{$_label-spacing-24arge} #{jkl.rem(-1px)};
+	--jkl-label-small-margin: 0 0 #{$_label-spacing-12mall} 0;
+	--jkl-label-medium-margin: 0 0 #{$_label-spacing-16edium} 0;
+	--jkl-label-large-margin: 0 0 #{$_label-spacing-24arge} #{jkl.rem(-1px)};
 
-    @include jkl.declare-font-variables("jkl-label-small", "small");
-    @include jkl.declare-font-variables("jkl-label-medium", "body");
-    @include jkl.declare-font-variables("jkl-label-large", "heading-2");
+	@include jkl.declare-font-variables("jkl-label-small", "small");
+	@include jkl.declare-font-variables("jkl-label-medium", "body");
+	@include jkl.declare-font-variables("jkl-label-large", "heading-2");
 }
 
 @include jkl.compact-density-variables {
-    $_label-spacing-12mall--compact: jkl.$spacing-4;
-    $_label-spacing-16edium--compact: jkl.$spacing-8;
-    $_label-spacing-24arge--compact: jkl.$spacing-12;
+	$_label-spacing-12mall--compact: jkl.$spacing-4;
+	$_label-spacing-16edium--compact: jkl.$spacing-8;
+	$_label-spacing-24arge--compact: jkl.$spacing-12;
 
-    --jkl-label-small-margin: 0 0 #{$_label-spacing-12mall--compact} 0;
-    --jkl-label-medium-margin: 0 0 #{$_label-spacing-16edium--compact} 0;
-    --jkl-label-large-margin: 0 0 #{$_label-spacing-24arge--compact} #{jkl.rem(
-        -1px
-    )};
+	--jkl-label-small-margin: 0 0 #{$_label-spacing-12mall--compact} 0;
+	--jkl-label-medium-margin: 0 0 #{$_label-spacing-16edium--compact} 0;
+	--jkl-label-large-margin: 0 0 #{$_label-spacing-24arge--compact}
+		#{jkl.rem(-1px)};
 }
 
 .jkl-label {
-    display: block;
-    margin-left: initial;
-    color: var(--jkl-color-text-default);
+	display: block;
+	margin-left: initial;
+	color: var(--jkl-color-text-default);
 
-    &--small {
-        @include jkl.use-font-variables("jkl-label-small");
-        margin: var(--jkl-label-small-margin);
-    }
+	&--small {
+		@include jkl.use-font-variables("jkl-label-small");
+		margin: var(--jkl-label-small-margin);
+	}
 
-    &--medium {
-        @include jkl.use-font-variables("jkl-label-medium");
-        margin: var(--jkl-label-medium-margin);
-    }
+	&--medium {
+		@include jkl.use-font-variables("jkl-label-medium");
+		margin: var(--jkl-label-medium-margin);
+	}
 
-    &--large {
-        @include jkl.use-font-variables("jkl-label-large");
-        margin: var(--jkl-label-large-margin);
-    }
+	&--large {
+		@include jkl.use-font-variables("jkl-label-large");
+		margin: var(--jkl-label-large-margin);
+	}
 
-    &--sr-only {
-        @include jkl.screenreader-only;
-    }
+	&--sr-only {
+		@include jkl.screenreader-only;
+	}
 }
 
 @keyframes #{$_support-icon-entrance-animation-name} {
-    0% {
-        margin-right: 0;
-        opacity: 0;
-        transform: scale(1);
-    }
+	0% {
+		margin-right: 0;
+		opacity: 0;
+		transform: scale(1);
+	}
 
-    30% {
-        margin-right: jkl.$spacing-8;
-    }
+	30% {
+		margin-right: jkl.$spacing-8;
+	}
 
-    50% {
-        opacity: 1;
-    }
+	50% {
+		opacity: 1;
+	}
 
-    70% {
-        transform: scale(1.1);
-    }
+	70% {
+		transform: scale(1.1);
+	}
 
-    85% {
-        transform: scale(0.9);
-    }
+	85% {
+		transform: scale(0.9);
+	}
 
-    100% {
-        transform: scale(1);
-        opacity: 1;
-        margin-right: jkl.$spacing-8;
-    }
+	100% {
+		transform: scale(1);
+		opacity: 1;
+		margin-right: jkl.$spacing-8;
+	}
 }

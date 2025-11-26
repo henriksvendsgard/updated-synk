@@ -2,7 +2,7 @@
 @use "./legacy-tokens" as *;
 
 /// @type Color
-$color-focus-color: $color-granitt;
+$color-focus-color: $color-obsidian;
 
 /// @type Color
 $color-focus-color--darkbg: $color-snohvit;
@@ -10,10 +10,10 @@ $color-focus-color--darkbg: $color-snohvit;
 // Varslingsfarger / Meldingsfarger.
 // Kun til bruk som bakgrunn i komponenter som gir varslinger til bruker.
 $_varslingsfarger: (
-    "suksess": var(--jkl-success),
-    "feil": var(--jkl-error),
-    "info": var(--jkl-info),
-    "advarsel": var(--jkl-warning),
+	"suksess": var(--jkl-success),
+	"feil": var(--jkl-error),
+	"info": var(--jkl-info),
+	"advarsel": var(--jkl-warning),
 );
 
 /// Hent fargekoden til en navngitt varslingsfarge
@@ -22,5 +22,5 @@ $_varslingsfarger: (
 /// @return {Color} - fargekoden til den ønskede fargen
 /// @access private - forwardes ikke ut av modulen, men er tilgjengelig ved direkteimport. KUN FOR INTERN BRUK I JØKUL.
 @function varslingsfarge($farge) {
-    @return map.get($_varslingsfarger, $farge);
+	@return map.get($_varslingsfarger, $farge);
 }

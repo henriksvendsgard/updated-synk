@@ -36,13 +36,18 @@ export const NavLink = React.forwardRef(function NavLink<
             {...rest}
         >
             {back && (
-                <ArrowLeftIcon variant="small" className="jkl-nav-link__icon" />
+                <ArrowLeftIcon
+                    className="jkl-nav-link__icon"
+                    variant="medium"
+                    bold={active}
+                />
             )}
             {children}
             {!back && (
                 <ArrowRightIcon
-                    variant="small"
                     className="jkl-nav-link__icon"
+                    variant="medium"
+                    bold={active}
                 />
             )}
         </Component>

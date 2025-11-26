@@ -2,99 +2,110 @@
 @use "../../../core/jkl";
 
 .jkl-card {
-    --padding-s: var(--jkl-unit-05);
-    --padding-m: var(--jkl-unit-15);
-    --padding-l: var(--jkl-unit-20);
-    --padding-xl: var(--jkl-unit-30);
-    --border-radius: #{jkl.rem(4px)};
-    --border-color: transparent;
-    --border-width: #{jkl.rem(1px)};
-    --background-color: transparent;
+	--jkl-card-padding-xs: #{jkl.$spacing-4};
+	--padding-s: var(--jkl-unit-05);
+	--padding-m: var(--jkl-unit-15);
+	--padding-l: var(--jkl-unit-20);
+	--padding-xl: var(--jkl-unit-30);
+	--border-radius: #{jkl.rem(16px)};
+	--border-color: transparent;
+	--border-width: #{jkl.rem(1px)};
+	--background-color: transparent;
 
-    position: relative;
-    overflow: hidden;
-    display: block;
-    background-color: var(--background-color);
-    border-radius: var(--border-radius);
-    box-sizing: border-box;
-    padding: var(--padding, var(--padding-s));
-    text-decoration: none;
-    color: var(--jkl-color-text-default);
+	position: relative;
+	overflow: hidden;
+	display: block;
+	background-color: var(--background-color);
+	border-radius: var(--border-radius);
+	box-sizing: border-box;
+	padding: var(--padding, var(--padding-s));
+	text-decoration: none;
+	color: var(--jkl-color-text-default);
 
-    &::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        pointer-events: none;
-        border-radius: var(--border-radius);
-        border: var(--border-width) solid var(--border-color);
+	&::after {
+		content: "";
+		position: absolute;
+		inset: 0;
+		pointer-events: none;
+		border-radius: var(--border-radius);
+		border: var(--border-width) solid var(--border-color);
 
-        @include jkl.motion("standard", "snappy", border-color, border-size);
-    }
+		@include jkl.motion("standard", "snappy", border-color, border-size);
+	}
 
-    @include jkl.from-medium-device {
-        --padding-s: var(--jkl-unit-10);
-        --padding-m: var(--jkl-unit-20);
-        --padding-l: var(--jkl-unit-30);
-        --padding-xl: var(--jkl-unit-40);
-    }
+	@include jkl.from-medium-device {
+		--jkl-card-padding-xs: #{jkl.$spacing-8};
+		--padding-s: var(--jkl-unit-10);
+		--padding-m: var(--jkl-unit-20);
+		--padding-l: var(--jkl-unit-30);
+		--padding-xl: var(--jkl-unit-40);
+	}
 
-    &[data-padding="s"] {
-        --padding: var(--padding-s);
-    }
+	&[data-padding="xs"] {
+		--padding: var(--jkl-card-padding-xs);
+	}
 
-    &[data-padding="m"] {
-        --padding: var(--padding-m);
-    }
+	&[data-padding="s"] {
+		--padding: var(--padding-s);
+	}
 
-    &[data-padding="l"] {
-        --padding: var(--padding-l);
-    }
+	&[data-padding="m"] {
+		--padding: var(--padding-m);
+	}
 
-    &[data-padding="xl"] {
-        --padding: var(--padding-xl);
-    }
+	&[data-padding="l"] {
+		--padding: var(--padding-l);
+	}
 
-    &--high {
-        --background-color: var(--jkl-color-background-container-high);
-    }
+	&[data-padding="xl"] {
+		--padding: var(--padding-xl);
+	}
 
-    &--low {
-        --background-color: var(--jkl-color-background-container-low);
-    }
+	&--default {
+		--background-color: var(--jkl-color-background-container-3);
+	}
 
-    &--outlined {
-        --border-color: var(--jkl-color-border-separator);
-    }
+	&--highlighted {
+		--background-color: var(--jkl-color-background-container-high);
+	}
 
-    &[data-clickable="true"] {
-        cursor: pointer;
+	&--subdued {
+		--background-color: var(--jkl-color-background-container-subdued);
+	}
 
-        &:hover {
-            --border-color: var(--jkl-color-border-separator-hover);
-            --border-width: #{jkl.rem(2px)};
-        }
+	&--outlined {
+		outline: #{jkl.rem(1px)} solid var(--jkl-color-border-subdued);
+		outline-offset: #{jkl.rem(-1px)};
+	}
 
-        &:focus-visible {
-            @include jkl.focus-outline;
-        }
-    }
+	&[data-clickable="true"] {
+		cursor: pointer;
+
+		&:hover {
+			--border-color: var(--jkl-color-border-separator-hover);
+			--border-width: #{jkl.rem(2px)};
+		}
+
+		&:focus-visible {
+			@include jkl.focus-outline;
+		}
+	}
 }
 
 .jkl-card-image {
-    --margin: calc(
-        var(--padding, 0) * -1
-    ); // Sett negativ margin tilsvarende padding (fra Card)
+	--margin: calc(
+		var(--padding, 0) * -1
+	); // Sett negativ margin tilsvarende padding (fra Card)
 
-    width: calc(100% + 2 * var(--padding, 0));
-    aspect-ratio: var(--image-aspect-ratio, 3/2);
-    margin-inline: var(--margin, 0);
+	width: calc(100% + 2 * var(--padding, 0));
+	aspect-ratio: var(--image-aspect-ratio, 3/2);
+	margin-inline: var(--margin, 0);
 
-    &--top {
-        margin-top: var(--margin, 0);
-    }
+	&--top {
+		margin-top: var(--margin, 0);
+	}
 
-    &--bottom {
-        margin-bottom: var(--margin, 0);
-    }
+	&--bottom {
+		margin-bottom: var(--margin, 0);
+	}
 }

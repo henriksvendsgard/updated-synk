@@ -6,72 +6,72 @@
 
 /* Used by menu to figure out if it should render a compact or comfortable view */
 @include jkl.comfortable-density-variables {
-    --jkl-density: "comfortable";
+	--jkl-density: "comfortable";
 }
 
 @include jkl.compact-density-variables {
-    --jkl-density: "compact";
+	--jkl-density: "compact";
 }
 
 @include jkl.light-mode-variables {
-    --jkl-background-color: #{jkl.$color-snohvit};
-    --jkl-color: #{jkl.$color-granitt};
-    --jkl-error: #{jkl.$color-feil};
-    --jkl-info: #{jkl.$color-info};
-    --jkl-warning: #{jkl.$color-advarsel};
-    --jkl-success: #{jkl.$color-suksess};
+	--jkl-background-color: #{jkl.$color-snohvit};
+	--jkl-color: #{jkl.$color-obsidian};
+	--jkl-error: #{jkl.$color-feil};
+	--jkl-info: #{jkl.$color-info};
+	--jkl-warning: #{jkl.$color-advarsel};
+	--jkl-success: #{jkl.$color-suksess};
 }
 
 @include jkl.dark-mode-variables {
-    --jkl-background-color: #{jkl.$color-granitt};
-    --jkl-color: #{jkl.$color-snohvit};
-    --jkl-error: #{jkl.$color-feil-dark};
-    --jkl-info: #{jkl.$color-info-dark};
-    --jkl-warning: #{jkl.$color-advarsel-dark};
-    --jkl-success: #{jkl.$color-suksess-dark};
+	--jkl-background-color: #{jkl.$color-obsidian};
+	--jkl-color: #{jkl.$color-snohvit};
+	--jkl-error: #{jkl.$color-feil-dark};
+	--jkl-info: #{jkl.$color-info-dark};
+	--jkl-warning: #{jkl.$color-advarsel-dark};
+	--jkl-success: #{jkl.$color-suksess-dark};
 }
 
 :root {
-    @each $level, $values in typography.$text-styles {
-        @each $property,
-            $value in map.get(typography.$text-styles, $level, "small-screen")
-        {
-            --jkl-#{$level}-#{$property}: #{$value};
-        }
-    }
+	@each $level, $values in typography.$text-styles {
+		@each $property,
+			$value in map.get(typography.$text-styles, $level, "small-screen")
+		{
+			--jkl-#{$level}-#{$property}: #{$value};
+		}
+	}
 
-    @include jkl.from-medium-device {
-        @each $level, $values in typography.$text-styles {
-            @each $property,
-                $value
-                    in map.get(typography.$text-styles, $level, "large-screen")
-            {
-                --jkl-#{$level}-#{$property}: #{$value};
-            }
-        }
-    }
+	@include jkl.from-medium-device {
+		@each $level, $values in typography.$text-styles {
+			@each $property,
+				$value
+					in map.get(typography.$text-styles, $level, "large-screen")
+			{
+				--jkl-#{$level}-#{$property}: #{$value};
+			}
+		}
+	}
 }
 
 .jkl {
-    @include jkl.use-font-family("Fremtind Grotesk");
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+	@include jkl.use-font-family("General Sans");
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 
-    background-color: var(--jkl-background-color);
-    color: var(--jkl-color);
+	background-color: var(--jkl-color-background-page);
+	color: var(--jkl-color);
 
-    strong {
-        --jkl-icon-weight: #{jkl.$icon-weight-bold};
-        font-weight: jkl.$typography-weight-bold;
-    }
+	strong {
+		--jkl-icon-weight: #{jkl.$icon-weight-bold};
+		font-weight: jkl.$typography-weight-semibold;
+	}
 }
 
 @include jkl.prefers-reduced-motion {
-    *,
-    *::after,
-    *::before {
-        animation-duration: 0ms !important;
-        animation-delay: 0ms !important;
-        transition: none !important;
-    }
+	*,
+	*::after,
+	*::before {
+		animation-duration: 0ms !important;
+		animation-delay: 0ms !important;
+		transition: none !important;
+	}
 }

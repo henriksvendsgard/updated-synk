@@ -7,7 +7,7 @@ import React, {
 } from "react";
 import type { PolymorphicRef } from "../../utilities/polymorphism/polymorphism.js";
 import { ChevronDownIcon } from "../icon/icons/ChevronDownIcon.js";
-import { ChevronUpIcon } from "../icon/index.js";
+import { ArrowDownIcon, ChevronUpIcon } from "../icon/index.js";
 import { ExpanderContext } from "./context.js";
 import type {
     ExpandableContext,
@@ -80,7 +80,7 @@ export const Expander = React.forwardRef(function Expander<
         >
             {icon || null}
             <span className="jkl-expander__label">{children}</span>
-            <Chevron className="jkl-expander__chevron" />
+            <ArrowDownIcon className="jkl-expander__chevron" variant="medium" />
         </El>
     );
 }) as ExpanderComponent;

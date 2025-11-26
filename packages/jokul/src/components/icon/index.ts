@@ -1,11 +1,11 @@
 export { Icon } from "./Icon.js";
 
-export type { ArrowVerticalAnimatedProps } from "./icons/animated/ArrowVerticalAnimated.js";
 export type { ArrowHorizontalAnimatedProps } from "./icons/animated/ArrowHorizontalAnimated.js";
+export type { ArrowVerticalAnimatedProps } from "./icons/animated/ArrowVerticalAnimated.js";
 export type { PlusRemoveAnimatedProps } from "./icons/animated/PlusRemoveAnimated.js";
 
-export { ArrowVerticalAnimated } from "./icons/animated/ArrowVerticalAnimated.js";
 export { ArrowHorizontalAnimated } from "./icons/animated/ArrowHorizontalAnimated.js";
+export { ArrowVerticalAnimated } from "./icons/animated/ArrowVerticalAnimated.js";
 export { PlusRemoveAnimated } from "./icons/animated/PlusRemoveAnimated.js";
 
 export type { IconProps, IconVariant } from "./types.js";
@@ -26,17 +26,23 @@ export { CopyIcon } from "./icons/CopyIcon.js";
 export { DotsIcon } from "./icons/DotsIcon.js";
 export { DragIcon } from "./icons/DragIcon.js";
 export { ErrorIcon } from "./icons/ErrorIcon.js";
+export { GlobeIcon } from "./icons/GlobeIcon.js";
 export { GreenCheckIcon } from "./icons/GreenCheckIcon.js";
 export { HamburgerIcon } from "./icons/HamburgerIcon.js";
+export { HouseIcon } from "./icons/HouseIcon.js";
 export { InfoIcon } from "./icons/InfoIcon.js";
 export { LinkIcon } from "./icons/LinkIcon.js";
 export { MinusIcon } from "./icons/MinusIcon.js";
 export { OpenInNewIcon } from "./icons/OpenInNewIcon.js";
+export { PackageIcon } from "./icons/PackageIcon.js";
 export { PenIcon } from "./icons/PenIcon.js";
 export { PlusIcon } from "./icons/PlusIcon.js";
 export { QuestionIcon } from "./icons/QuestionIcon.js";
 export { RedCrossIcon } from "./icons/RedCrossIcon.js";
 export { SearchIcon } from "./icons/SearchIcon.js";
+export { SendToBackIcon } from "./icons/SendToBackIcon.js";
+export { SettingsIcon } from "./icons/SettingsIcon.js";
+export { UserSettingsIcon } from "./icons/UserSettingsIcon.js";
 export { SuccessIcon } from "./icons/SuccessIcon.js";
 export { ThumbDownIcon } from "./icons/ThumbDownIcon.js";
 export { ThumbUpIcon } from "./icons/ThumbUpIcon.js";

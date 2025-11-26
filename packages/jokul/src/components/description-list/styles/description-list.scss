@@ -2,55 +2,55 @@
 @use "../../../core/jkl";
 
 @mixin _horizontal-list {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    grid-template-columns: fit-content(40%) 1fr;
+	display: grid;
+	grid-template-columns: auto 1fr;
+	grid-template-columns: fit-content(40%) 1fr;
 
-    .jkl-description-list__term {
-        grid-column-start: 1;
-        margin: 0;
-        overflow-wrap: break-word;
+	.jkl-description-list__term {
+		grid-column-start: 1;
+		margin: 0;
+		overflow-wrap: break-word;
 
-        &:not(:first-of-type) {
-            margin-top: jkl.$spacing-8;
-        }
-    }
+		&:not(:first-of-type) {
+			margin-top: jkl.$spacing-8;
+		}
+	}
 
-    .jkl-description-list__detail {
-        margin-left: jkl.$spacing-24;
-        grid-column-start: 2;
-    }
+	.jkl-description-list__detail {
+		margin-left: jkl.$spacing-24;
+		grid-column-start: 2;
+	}
 
-    .jkl-description-list__detail + .jkl-description-list__detail {
-        margin-top: jkl.$spacing-8;
-    }
+	.jkl-description-list__detail + .jkl-description-list__detail {
+		margin-top: jkl.$spacing-8;
+	}
 
-    .jkl-description-list__term + .jkl-description-list__detail {
-        &:not(:first-of-type) {
-            margin-top: jkl.$spacing-8;
-        }
-    }
+	.jkl-description-list__term + .jkl-description-list__detail {
+		&:not(:first-of-type) {
+			margin-top: jkl.$spacing-8;
+		}
+	}
 }
 
 .jkl-description-list {
-    &__term {
-        font-weight: jkl.$typography-weight-bold;
-        margin-bottom: jkl.$spacing-4;
+	&__term {
+		font-weight: jkl.$typography-weight-semibold;
+		margin-bottom: jkl.$spacing-4;
 
-        &:not(:first-child) {
-            margin-top: jkl.$spacing-12;
-        }
-    }
+		&:not(:first-child) {
+			margin-top: jkl.$spacing-12;
+		}
+	}
 
-    &__detail {
-        margin-left: 0;
-    }
+	&__detail {
+		margin-left: 0;
+	}
 
-    &__detail + &__detail {
-        margin-top: jkl.$spacing-4;
-    }
+	&__detail + &__detail {
+		margin-top: jkl.$spacing-4;
+	}
 
-    @include jkl.from-medium-device {
-        @include _horizontal-list;
-    }
+	@include jkl.from-medium-device {
+		@include _horizontal-list;
+	}
 }

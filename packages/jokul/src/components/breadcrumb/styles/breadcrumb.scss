@@ -2,37 +2,35 @@
 @use "../../../core/jkl";
 
 .jkl-breadcrumb {
-    a[aria-current] {
-        text-decoration: none;
-        background-image: none;
-        color: var(--jkl-color-text-interactive);
+	a[aria-current] {
+		text-decoration: none;
+		background-image: none;
+		color: var(--jkl-color);
+		font-weight: var(--jkl-typography-font-weight-normal);
+		letter-spacing: unset;
 
-        &:hover {
-            cursor: default;
-            color: var(--jkl-color-text-interactive-hover);
-            background-image: none;
-        }
-    }
+		&:hover {
+			cursor: default;
+			color: var(--jkl-link-color);
+			background-image: none;
+		}
+	}
 
-    a:focus-visible {
-        @include jkl.focus-outline;
-    }
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		list-style: none;
+		margin: 0;
+		padding-inline-start: 0;
+	}
 
-    &__list {
-        display: flex;
-        flex-wrap: wrap;
-        list-style: none;
-        margin: 0;
-        padding-inline-start: 0;
-    }
+	&__item {
+		margin-bottom: jkl.$spacing-8;
+		white-space: nowrap;
+	}
 
-    &__item {
-        margin-bottom: jkl.$unit-10;
-        white-space: nowrap;
-    }
-
-    &__item-separator {
-        padding-left: jkl.$unit-10;
-        padding-right: jkl.$unit-10;
-    }
+	&__item-separator {
+		padding-left: jkl.$spacing-8;
+		padding-right: jkl.$spacing-8;
+	}
 }

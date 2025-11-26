@@ -7,49 +7,49 @@
 @use "calendar-date-button";
 
 @include jkl.light-mode-variables {
-    --jkl-datepicker-focus-color: #{jkl.$color-granitt};
+	--jkl-datepicker-focus-color: #{jkl.$color-obsidian};
 }
 
 @include jkl.dark-mode-variables {
-    --jkl-datepicker-focus-color: #{jkl.$color-snohvit};
+	--jkl-datepicker-focus-color: #{jkl.$color-snohvit};
 }
 
 .jkl-datepicker {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
 
-    @include jkl.reset-outline;
+	@include jkl.reset-outline;
 
-    &__input-wrapper {
-        position: relative;
-        display: contents;
-    }
+	&__input-wrapper {
+		position: relative;
+		display: contents;
+	}
 
-    & &__input {
-        // Juster padding for bedre balanse når det vises tall
-        padding-top: calc(var(--jkl-text-input-vertical-padding) + 0.08em);
-        padding-bottom: calc(var(--jkl-text-input-vertical-padding) - 0.08em);
-    }
+	& &__input {
+		// Juster padding for bedre balanse når det vises tall
+		padding-top: calc(var(--jkl-text-input-vertical-padding) + 0.08em);
+		padding-bottom: calc(var(--jkl-text-input-vertical-padding) - 0.08em);
+	}
 
-    &__calendar-wrapper {
-        position: absolute;
-        top: calc(100% + #{jkl.rem(14px)});
-        left: 0;
-        z-index: jkl.$z-index--dropdown;
-    }
+	&__calendar-wrapper {
+		position: absolute;
+		top: calc(100% + #{jkl.rem(14px)});
+		left: 0;
+		z-index: jkl.$z-index--dropdown;
+	}
 
-    @include jkl.small-device {
-        &__calendar-wrapper {
-            left: -1.15rem;
-        }
-    }
+	@include jkl.small-device {
+		&__calendar-wrapper {
+			left: -1.15rem;
+		}
+	}
 
-    // Custom tweaks for iPhone SE
-    @include jkl.screen-to(375px) {
-        &__calendar-wrapper {
-            left: -2.5rem;
-        }
-    }
+	// Custom tweaks for iPhone SE
+	@include jkl.screen-to(375px) {
+		&__calendar-wrapper {
+			left: -2.5rem;
+		}
+	}
 }

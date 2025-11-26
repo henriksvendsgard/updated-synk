@@ -8,28 +8,35 @@
     "typography": {
         "weight": {
             "normal": { "value": "400" },
+            "medium": { "value": "500" },
+            "semibold": { "value": "600" },
             "bold": { "value": "700" }
         },
         "font": {
             "size": {
+                "14": { "value": "0.875rem" },
                 "16": { "value": "1rem" },
                 "18": { "value": "1.125rem" },
                 "20": { "value": "1.25rem" },
                 "21": { "value": "1.3125rem" },
                 "23": { "value": "1.4375rem" },
+                "24": { "value": "1.5rem" },
                 "25": { "value": "1.5625rem" },
                 "26": { "value": "1.625rem" },
                 "28": { "value": "1.75rem" },
                 "30": { "value": "1.875rem" },
                 "36": { "value": "2.25rem" },
+                "40": { "value": "2.5rem" },
                 "44": { "value": "2.75rem" },
                 "56": { "value": "3.5rem" }
             }
         },
         "line": {
             "height": {
+                "20": { "value": "1.25rem" },
                 "24": { "value": "1.5rem" },
                 "28": { "value": "1.75rem" },
+                "30": { "value": "1.875rem" },
                 "32": { "value": "2rem" },
                 "36": { "value": "2.25rem" },
                 "40": { "value": "2.5rem" },
@@ -41,13 +48,13 @@
         "title": {
             "small": {
                 "fontSize": {
-                    "value": "{typography.font.size.36}"
+                    "value": "{typography.font.size.40}"
                 },
                 "lineHeight": {
                     "value": "{typography.line.height.44}"
                 },
                 "fontWeight": {
-                    "value": "{typography.weight.normal}"
+                    "value": "{typography.weight.bold}"
                 }
             },
             "base": {
@@ -58,7 +65,7 @@
                     "value": "{typography.line.height.64}"
                 },
                 "fontWeight": {
-                    "value": "{typography.weight.normal}"
+                    "value": "{typography.weight.bold}"
                 }
             }
         },
@@ -71,7 +78,7 @@
                     "value": "{typography.line.height.36}"
                 },
                 "fontWeight": {
-                    "value": "{typography.weight.normal}"
+                    "value": "{typography.weight.bold}"
                 }
             },
             "base": {
@@ -82,20 +89,20 @@
                     "value": "{typography.line.height.52}"
                 },
                 "fontWeight": {
-                    "value": "{typography.weight.normal}"
+                    "value": "{typography.weight.bold}"
                 }
             }
         },
         "heading-1": {
             "small": {
                 "fontSize": {
-                    "value": "{typography.font.size.26}"
+                    "value": "{typography.font.size.28}"
                 },
                 "lineHeight": {
-                    "value": "{typography.line.height.32}"
+                    "value": "{typography.line.height.36}"
                 },
                 "fontWeight": {
-                    "value": "{typography.weight.normal}"
+                    "value": "{typography.weight.bold}"
                 }
             },
             "base": {
@@ -106,20 +113,20 @@
                     "value": "{typography.line.height.44}"
                 },
                 "fontWeight": {
-                    "value": "{typography.weight.normal}"
+                    "value": "{typography.weight.bold}"
                 }
             }
         },
         "heading-2": {
             "small": {
                 "fontSize": {
-                    "value": "{typography.font.size.23}"
+                    "value": "{typography.font.size.24}"
                 },
                 "lineHeight": {
-                    "value": "{typography.line.height.32}"
+                    "value": "{typography.line.height.30}"
                 },
                 "fontWeight": {
-                    "value": "{typography.weight.normal}"
+                    "value": "{typography.weight.bold}"
                 }
             },
             "base": {
@@ -130,7 +137,7 @@
                     "value": "{typography.line.height.40}"
                 },
                 "fontWeight": {
-                    "value": "{typography.weight.normal}"
+                    "value": "{typography.weight.bold}"
                 }
             }
         },
@@ -206,7 +213,7 @@
                 }
             }
         },
-        "body": {
+        "large": {
             "small": {
                 "fontSize": {
                     "value": "{typography.font.size.18}"
@@ -223,7 +230,31 @@
                     "value": "{typography.font.size.20}"
                 },
                 "lineHeight": {
-                    "value": "{typography.line.height.32}"
+                    "value": "{typography.line.height.30}"
+                },
+                "fontWeight": {
+                    "value": "{typography.weight.normal}"
+                }
+            }
+        },
+        "body": {
+            "small": {
+                "fontSize": {
+                    "value": "{typography.font.size.16}"
+                },
+                "lineHeight": {
+                    "value": "{typography.line.height.24}"
+                },
+                "fontWeight": {
+                    "value": "{typography.weight.normal}"
+                }
+            },
+            "base": {
+                "fontSize": {
+                    "value": "{typography.font.size.18}"
+                },
+                "lineHeight": {
+                    "value": "{typography.line.height.28}"
                 },
                 "fontWeight": {
                     "value": "{typography.weight.normal}"
@@ -233,10 +264,10 @@
         "small": {
             "small": {
                 "fontSize": {
-                    "value": "{typography.font.size.16}"
+                    "value": "{typography.font.size.14}"
                 },
                 "lineHeight": {
-                    "value": "{typography.line.height.24}"
+                    "value": "{typography.line.height.20}"
                 },
                 "fontWeight": {
                     "value": "{typography.weight.normal}"

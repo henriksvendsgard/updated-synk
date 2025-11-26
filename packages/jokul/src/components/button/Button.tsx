@@ -64,7 +64,6 @@ export const Button = React.forwardRef(function Button<
             {children && (
                 <Loader
                     className="jkl-button__loader"
-                    variant="medium"
                     textDescription={
                         loader?.textDescription || "Vennligst vent"
                     }

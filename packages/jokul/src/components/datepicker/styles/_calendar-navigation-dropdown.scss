@@ -1,51 +1,51 @@
 @use "../../../core/jkl";
 
 .jkl-calendar-navigation-dropdown {
-    // Størrelsen til medium ikon
-    --chevron-size: #{jkl.rem(24px)};
+	// Størrelsen til medium ikon
+	--chevron-size: #{jkl.rem(24px)};
 
-    display: inline-flex;
-    align-items: center;
+	display: inline-flex;
+	align-items: center;
 
-    & > * {
-        cursor: pointer;
-    }
+	& > * {
+		cursor: pointer;
+	}
 
-    &__select {
-        appearance: none;
+	&__select {
+		appearance: none;
 
-        @include jkl.text-style("small") {
-            font-weight: jkl.$typography-weight-bold;
-        }
-        background-color: transparent;
-        color: inherit;
-        border-radius: 0;
-        border: none;
-        text-align: end;
-        text-align-last: end;
-        height: jkl.rem(40px);
-        margin: 0;
-        padding: 0;
-        padding-inline-end: var(--chevron-size);
+		@include jkl.text-style("small") {
+			font-weight: jkl.$typography-weight-semibold;
+		}
+		background-color: transparent;
+		color: inherit;
+		border-radius: 0;
+		border: none;
+		text-align: end;
+		text-align-last: end;
+		height: jkl.rem(40px);
+		margin: 0;
+		padding: 0;
+		padding-inline-end: var(--chevron-size);
 
-        @include jkl.reset-outline;
+		@include jkl.reset-outline;
 
-        & option {
-            color: var(--jkl-select-text-color);
-            background-color: var(--jkl-select-open-background-color);
-        }
+		& option {
+			color: var(--jkl-select-text-color);
+			background-color: var(--jkl-select-open-background-color);
+		}
 
-        &:focus-visible {
-            @include jkl.focus-outline;
-        }
-    }
+		&:focus-visible {
+			@include jkl.focus-outline;
+		}
+	}
 
-    &__chevron {
-        margin-left: calc(var(--chevron-size) * -1);
-        pointer-events: none;
-    }
+	&__chevron {
+		margin-left: calc(var(--chevron-size) * -1);
+		pointer-events: none;
+	}
 
-    & + & {
-        margin-inline-start: var(--jkl-unit-10);
-    }
+	& + & {
+		margin-inline-start: var(--jkl-unit-10);
+	}
 }
