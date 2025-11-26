@@ -1,11 +1,11 @@
-import { CircleX } from "lucide-react";
+import { Tag } from "lucide-react";
 import React from "react";
 import { Icon, type IconComponent } from "../Icon.js";
 import type { IconProps } from "../types.js";
 
-export const ErrorIcon: IconComponent = (props: IconProps) => (
+export const TagIcon: IconComponent = (props: IconProps) => (
     <Icon {...props}>
-        <CircleX />
+        <Tag />
     </Icon>
 );
-ErrorIcon.displayName = "ErrorIcon";
+TagIcon.displayName = "TagIcon";

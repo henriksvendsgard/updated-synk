@@ -1,11 +1,11 @@
-import { CircleX } from "lucide-react";
+import { Globe } from "lucide-react";
 import React from "react";
 import { Icon, type IconComponent } from "../Icon.js";
 import type { IconProps } from "../types.js";
 
-export const ErrorIcon: IconComponent = (props: IconProps) => (
+export const GlobeIcon: IconComponent = (props: IconProps) => (
     <Icon {...props}>
-        <CircleX />
+        <Globe />
     </Icon>
 );
-ErrorIcon.displayName = "ErrorIcon";
+GlobeIcon.displayName = "GlobeIcon";

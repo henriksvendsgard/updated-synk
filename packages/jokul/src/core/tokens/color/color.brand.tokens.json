@@ -43,7 +43,7 @@
                     "value": "#FFFFFF"
                 },
                 "svart-70": {
-                    "value": "#181818B2"
+                    "value": "#181818B3"
                 }
             },
             "purple": {
@@ -134,10 +134,10 @@
         },
         "functional": {
             "info": {
-                "value": "#F6E8FF"
+                "value": "#E0B5FD"
             },
             "info-dark": {
-                "value": "#F6E8FF"
+                "value": "#E0B5FD"
             },
             "success": {
                 "value": "#A7F3C1"

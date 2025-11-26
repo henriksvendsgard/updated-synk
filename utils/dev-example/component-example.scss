@@ -1,111 +1,101 @@
 @use "../../packages/jokul/src/core/jkl/" as jkl;
 
-@include jkl.light-mode-variables {
-    --component-example-bg: #{jkl.$color-dis};
-    --component-example-header-color: #{jkl.$color-stein};
-}
-
-@include jkl.dark-mode-variables {
-    --component-example-bg: #{jkl.$color-skifer};
-    --component-example-header-color: #{jkl.$color-svaberg};
-}
-
 .jkl-portal-code-example {
-    max-width: min(#{jkl.rem(750px)}, 50vw);
+	max-width: min(#{jkl.rem(750px)}, 50vw);
 
-    @include jkl.small-device {
-        width: calc(100% - #{jkl.$spacing-40});
-        max-width: 100%;
-        min-width: initial;
-    }
+	@include jkl.small-device {
+		width: calc(100% - #{jkl.$spacing-40});
+		max-width: 100%;
+		min-width: initial;
+	}
 }
 
 .jkl-portal-component-example {
-    box-sizing: border-box;
-    background-color: var(--component-example-bg);
-    padding: jkl.$spacing-12;
-    display: flex;
-    flex-direction: row;
-    max-width: jkl.rem(740px);
-    min-height: jkl.rem(208px);
+	box-sizing: border-box;
+	background-color: var(--jkl-color-background-container-2);
+	padding: jkl.$spacing-12;
+	display: flex;
+	flex-direction: row;
+	max-width: jkl.rem(740px);
+	min-height: jkl.rem(208px);
 
-    &--is-wide {
-        max-width: jkl.rem(1200px);
-    }
+	&--is-wide {
+		max-width: jkl.rem(1200px);
+	}
 
-    &__example-wrapper {
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: flex-start;
-        color: var(--jkl-color);
-        background-color: var(--jkl-background-color);
-        position: relative;
-        padding: jkl.$spacing-64 jkl.$spacing-16;
-        scroll-margin-top: jkl.$spacing-168;
+	&__example-wrapper {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-start;
+		color: var(--jkl-color);
+		background-color: var(--jkl-color-background-page);
+		position: relative;
+		padding: jkl.$spacing-64 jkl.$spacing-16;
+		scroll-margin-top: jkl.$spacing-168;
 
-        // Unngå at endring av tittel knekker visuell regresjonstest ved å skjule den
-        :not([data-test-mode="e2e"]) &::before {
-            color: var(--component-example-header-color);
-            position: absolute;
-            top: jkl.$spacing-12;
-            left: jkl.$spacing-16;
-            content: attr(data-example-text);
+		// Unngå at endring av tittel knekker visuell regresjonstest ved å skjule den
+		:not([data-test-mode="e2e"]) &::before {
+			color: var(--jkl-color-background-container-contrast);
+			position: absolute;
+			top: jkl.$spacing-12;
+			left: jkl.$spacing-16;
+			content: attr(data-example-text);
 
-            @include jkl.text-style("small");
-        }
+			@include jkl.text-style("small");
+		}
 
-        &[data-test-mode="e2e-screenshot"] {
-            position: absolute;
-            z-index: 9001;
-            width: 600px;
-            height: 600px;
-            margin: auto;
-            inset: 0;
-        }
+		&[data-test-mode="e2e-screenshot"] {
+			position: absolute;
+			z-index: 9001;
+			width: 600px;
+			height: 600px;
+			margin: auto;
+			inset: 0;
+		}
 
-        &--scrollable {
-            overflow-x: scroll;
-        }
-    }
+		&--scrollable {
+			overflow-x: scroll;
+		}
+	}
 
-    &__example-options {
-        display: block;
-        padding: jkl.$spacing-12 jkl.$spacing-24;
-        min-width: jkl.rem(150px);
-    }
+	&__example-options {
+		display: block;
+		padding: jkl.$spacing-12 jkl.$spacing-24;
+		min-width: jkl.rem(150px);
+	}
 
-    &__example-options-header {
-        margin-bottom: jkl.$spacing-12;
+	&__example-options-header {
+		margin-bottom: jkl.$spacing-12;
 
-        @include jkl.text-style("small");
+		@include jkl.text-style("small");
 
-        &:not(:first-child) {
-            margin-top: jkl.$spacing-24;
-        }
-    }
+		&:not(:first-child) {
+			margin-top: jkl.$spacing-24;
+		}
+	}
 
-    &__choice-option {
-        margin-top: jkl.$spacing-24;
+	&__choice-option {
+		margin-top: jkl.$spacing-24;
 
-        & .jkl-label.jkl-label--small {
-            color: var(--jkl-color-text-subdued);
+		& .jkl-label.jkl-label--small {
+			color: var(--jkl-color-text-subdued);
 
-            @include jkl.text-style("small");
-        }
-    }
+			@include jkl.text-style("small");
+		}
+	}
 
-    @include jkl.screen-to(870px) {
-        width: 100%;
-        flex-direction: column;
+	@include jkl.screen-to(870px) {
+		width: 100%;
+		flex-direction: column;
 
-        &__example-wrapper {
-            width: initial;
-        }
+		&__example-wrapper {
+			width: initial;
+		}
 
-        &__example-options {
-            padding: 0;
-            padding-top: jkl.$spacing-12;
-        }
-    }
+		&__example-options {
+			padding: 0;
+			padding-top: jkl.$spacing-12;
+		}
+	}
 }

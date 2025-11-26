@@ -1,11 +1,11 @@
-import { CircleX } from "lucide-react";
+import { House } from "lucide-react";
 import React from "react";
 import { Icon, type IconComponent } from "../Icon.js";
 import type { IconProps } from "../types.js";
 
-export const ErrorIcon: IconComponent = (props: IconProps) => (
+export const HouseIcon: IconComponent = (props: IconProps) => (
     <Icon {...props}>
-        <CircleX />
+        <House />
     </Icon>
 );
-ErrorIcon.displayName = "ErrorIcon";
+HouseIcon.displayName = "HouseIcon";

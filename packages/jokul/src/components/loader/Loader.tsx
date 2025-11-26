@@ -1,3 +1,4 @@
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import clsx from "clsx";
 import React from "react";
 import type { LoaderProps } from "./types.js";
@@ -25,17 +26,17 @@ export const Loader = ({
     });
 
     return (
-        <span
-            aria-busy="true"
-            className={componentClassName}
-            data-testautoid={dataTestAutoId}
-            data-testid="jkl-loader"
-            title={textDescription}
-            {...rest}
-        >
-            <span className="jkl-loader__dot jkl-loader__dot--left" />
-            <span className="jkl-loader__dot jkl-loader__dot--middle" />
-            <span className="jkl-loader__dot jkl-loader__dot--right" />
+        <span>
+            <DotLottieReact
+                src="https://lottie.host/3871f461-2d57-48fc-948e-013481321441/Lh0TXRXRbr.lottie"
+                className={componentClassName}
+                aria-busy={true}
+                data-testautoid={dataTestAutoId}
+                data-testid="jkl-loader"
+                title={textDescription}
+                loop={true}
+                autoplay
+            />
             <span className="jkl-sr-only">{textDescription}</span>
         </span>
     );

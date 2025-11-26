@@ -3,26 +3,26 @@ import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 function copyJklFonts(destination) {
-    return {
-        name: "copy-jkl-fonts",
-        configResolved() {
-            const source = resolve(
-                fileURLToPath(new URL(".", import.meta.url)),
-                "..",
-                "..",
-                "packages",
-                "jokul",
-                "src",
-                "fonts",
-            );
-            if (!existsSync(destination)) {
-                cpSync(source, destination, {
-                    recursive: true,
-                });
-                console.log(`Copied font files into "${destination}"`);
-            }
-        },
-    };
+	return {
+		name: "copy-jkl-fonts",
+		configResolved() {
+			const source = resolve(
+				fileURLToPath(new URL(".", import.meta.url)),
+				"..",
+				"..",
+				"packages",
+				"jokul",
+				"src",
+				"fonts"
+			);
+			if (!existsSync(destination)) {
+				cpSync(source, destination, {
+					recursive: true,
+				});
+				console.log(`Copied font files into "${destination}"`);
+			}
+		},
+	};
 }
 
 export { copyJklFonts };

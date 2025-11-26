@@ -3,9 +3,9 @@
 @include jkl.light-mode-variables {
 	--code-block-border-color: #{jkl.$color-svaberg};
 	--code-block-bg-color: #{jkl.$color-sand};
-	--code-block-focus-color: #{jkl.$color-granitt};
+	--code-block-focus-color: #{jkl.$color-obsidian};
 	--language-tag-bg-color: #{jkl.$color-varde};
-	--language-tag-text-color: #{jkl.$color-granitt};
+	--language-tag-text-color: #{jkl.$color-obsidian};
 }
 
 @include jkl.dark-mode-variables {

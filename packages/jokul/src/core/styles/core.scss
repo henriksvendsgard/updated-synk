@@ -15,7 +15,7 @@
 
 @include jkl.light-mode-variables {
 	--jkl-background-color: #{jkl.$color-snohvit};
-	--jkl-color: #{jkl.$color-granitt};
+	--jkl-color: #{jkl.$color-obsidian};
 	--jkl-error: #{jkl.$color-feil};
 	--jkl-info: #{jkl.$color-info};
 	--jkl-warning: #{jkl.$color-advarsel};
@@ -23,7 +23,7 @@
 }
 
 @include jkl.dark-mode-variables {
-	--jkl-background-color: #{jkl.$color-granitt};
+	--jkl-background-color: #{jkl.$color-obsidian};
 	--jkl-color: #{jkl.$color-snohvit};
 	--jkl-error: #{jkl.$color-feil-dark};
 	--jkl-info: #{jkl.$color-info-dark};
@@ -33,14 +33,19 @@
 
 :root {
 	@each $level, $values in typography.$text-styles {
-		@each $property, $value in map.get(typography.$text-styles, $level, "small-screen") {
+		@each $property,
+			$value in map.get(typography.$text-styles, $level, "small-screen")
+		{
 			--jkl-#{$level}-#{$property}: #{$value};
 		}
 	}
 
 	@include jkl.from-medium-device {
 		@each $level, $values in typography.$text-styles {
-			@each $property, $value in map.get(typography.$text-styles, $level, "large-screen") {
+			@each $property,
+				$value
+					in map.get(typography.$text-styles, $level, "large-screen")
+			{
 				--jkl-#{$level}-#{$property}: #{$value};
 			}
 		}
@@ -52,7 +57,7 @@
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 
-	background-color: var(--jkl-background-color);
+	background-color: var(--jkl-color-background-page);
 	color: var(--jkl-color);
 
 	strong {

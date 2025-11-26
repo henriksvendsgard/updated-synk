@@ -208,7 +208,7 @@ export const TablePagination = forwardRef<HTMLDivElement, TablePaginationProps>(
                                         title={labels.previous}
                                         onClick={onPrevious}
                                     >
-                                        <ChevronLeftIcon />
+                                        <ChevronLeftIcon variant="medium" />
                                     </IconButton>
                                 </li>
                                 <PaginationPages
@@ -223,7 +223,7 @@ export const TablePagination = forwardRef<HTMLDivElement, TablePaginationProps>(
                                         title={labels.next}
                                         onClick={onNext}
                                     >
-                                        <ChevronRightIcon />
+                                        <ChevronRightIcon variant="medium" />
                                     </IconButton>
                                 </li>
                             </ul>

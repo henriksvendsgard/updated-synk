@@ -7,9 +7,11 @@
 @include jkl.compact-density-variables {
 	--jkl-select-input-height: #{jkl.$unit-40};
 	--jkl-select-arrow-right: #{jkl.$unit-05};
-	--jkl-select-button-padding: #{jkl.$unit-05} #{jkl.$unit-40} #{jkl.$unit-05} #{jkl.$unit-10};
+	--jkl-select-button-padding: #{jkl.$unit-05} #{jkl.$unit-40} #{jkl.$unit-05}
+		#{jkl.$unit-10};
 	--jkl-select-search-input-padding: #{jkl.$unit-05} #{jkl.$unit-10};
-	--jkl-select-native-padding: #{jkl.$unit-05} #{jkl.$unit-30} #{jkl.$unit-05} #{jkl.$unit-05};
+	--jkl-select-native-padding: #{jkl.$unit-05} #{jkl.$unit-30} #{jkl.$unit-05}
+		#{jkl.$unit-05};
 	--jkl-select-option-padding: #{jkl.$unit-05} #{jkl.$unit-10};
 
 	@include jkl.declare-font-variables("jkl-select", "small");
@@ -18,7 +20,8 @@
 @include jkl.comfortable-density-variables {
 	--jkl-select-input-height: #{jkl.$unit-60};
 	--jkl-select-arrow-right: #{jkl.$unit-10};
-	--jkl-select-button-padding: #{jkl.$unit-10} #{jkl.rem(36px)} #{jkl.$unit-10} #{jkl.$unit-15};
+	--jkl-select-button-padding: #{jkl.$unit-10} #{jkl.rem(36px)}
+		#{jkl.$unit-10} #{jkl.$unit-15};
 	--jkl-select-search-input-padding: var(--jkl-select-button-padding);
 	--jkl-select-native-padding: 0 #{jkl.$unit-50} 0 #{jkl.$unit-10};
 	--jkl-select-option-padding: #{jkl.$unit-10} #{jkl.$unit-15};
@@ -60,7 +63,7 @@
 			font-weight: normal;
 			font-family: sans-serif;
 			color: var(--jkl-color-text-subdued);
-			background-color: var(--jkl-color-background-container-high);
+			background-color: var(--jkl-color-background-input-base);
 		}
 	}
 
@@ -82,7 +85,7 @@
 		overflow: hidden;
 		text-overflow: ellipsis;
 		white-space: nowrap;
-		background-color: transparent;
+		background-color: var(--jkl-color-background-input-base);
 		color: var(--jkl-color-text-subdued);
 		cursor: pointer;
 
@@ -152,7 +155,10 @@
 		transition-property: transform, color;
 
 		@include jkl.motion;
-		@include jkl.forced-colors-svg-fallback($stroke: CanvasText, $fill: CanvasText);
+		@include jkl.forced-colors-svg-fallback(
+			$stroke: CanvasText,
+			$fill: CanvasText
+		);
 
 		.jkl-select:has([aria-invalid="true"]) & {
 			color: var(--jkl-color-text-on-alert);
@@ -174,7 +180,10 @@
 
 		overflow-y: auto;
 		// Sett makshøyde på listen til høyden av (maxShownOptions + 0.5) ganger høyden på ett enlinjes valg
-		max-height: calc(calc(var(--jkl-select-max-shown-options, 5) + 0.5) * var(--jkl-select-input-height));
+		max-height: calc(
+			calc(var(--jkl-select-max-shown-options, 5) + 0.5) *
+				var(--jkl-select-input-height)
+		);
 
 		transition-property: height;
 

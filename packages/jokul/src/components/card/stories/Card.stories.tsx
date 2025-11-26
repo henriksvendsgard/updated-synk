@@ -32,7 +32,7 @@ type Story = StoryObj<typeof meta>;
 export const Card: Story = {
     args: {
         padding: "m",
-        variant: "outlined",
+        variant: "default",
         children: "Hei, verden!",
     },
 };
@@ -41,7 +41,7 @@ export const Fakturainformasjon: Story = {
     args: {
         padding: "m",
         clickable: true,
-        variant: "outlined",
+        variant: "default",
         children: "",
     },
     render: ({ asChild, as, ...props }) => (
